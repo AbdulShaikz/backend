@@ -21,4 +21,11 @@ app.use(express.urlencoded({
 app.use(express.static("public"));  //storing files/assets on server which can be accessible
 app.use(cookieParser());    //cookieParser helps in accessing and setting cookies of the user browsers from the server
 
+//import routes
+import userRouter from './routes/user.routes.js';
+
+
+//routes declaration
+app.use('/api/v1/users', userRouter);
+
 export {app};
